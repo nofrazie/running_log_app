@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-faded">
+  <div class="container">
+    <a href="/" class="navbar-brand">RunLift Log</a>
+    <% if current_user %>
+      <ul class="nav navbar-nav pull-xs-right">
+        <li class="nav-item"><%= current_user.email %></li>
+        <li class="nav-item"><%= link_to "Log out", logout_path, method: "delete", class: "nav-link" %></li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-nav pull-xs-right">
+        <li class="nav-item"><%= link_to "Login", "login", class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Signup", "signup", class: "nav-link" %></li>
+      </ul>
+    <% end %>
+  </div>
+</nav>

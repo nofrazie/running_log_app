@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-  before_action :require_user, only: [:show]
+  before_action :require_user, only: [:index, :show]
+
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -15,7 +20,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      redirect_to '/signup'
+      render 'new'
     end
   end
 
