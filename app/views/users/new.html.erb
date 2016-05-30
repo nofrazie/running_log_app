@@ -1,0 +1,32 @@
+<h2>Signup</h2>
+
+<div class="row">
+  <div class="col-md-4">
+
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <fieldset class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", placeholder: "First name" %>
+      </fieldset>
+      <fieldset class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %>
+      </fieldset>
+      <fieldset class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+      </fieldset>
+      <fieldset class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      </fieldset>
+      <fieldset>
+        <%= f.label :password_confirmation, "Password again" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password confirmation" %>
+      </fieldset>
+      <%= f.submit "Create An Account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
