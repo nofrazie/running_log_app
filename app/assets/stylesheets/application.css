@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding-top: 75px;
+}
+
+#account-dropdown p {
+  margin-bottom: 0;
+}
+
+#account-dropdown p:nth-child(2) {
+  font-size: 12px;
+  color: #999;
+}

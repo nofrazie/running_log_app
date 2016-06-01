@@ -1,10 +1,21 @@
-<nav class="navbar navbar-light bg-faded">
+<nav class="navbar navbar-fixed-top navbar-dark bg-primary">
   <div class="container">
     <a href="/" class="navbar-brand">RunLift Log</a>
-    <% if current_user %>
+    <% if logged_in? %>
       <ul class="nav navbar-nav pull-xs-right">
-        <li class="nav-item"><%= current_user.email %></li>
-        <li class="nav-item"><%= link_to "Log out", logout_path, method: "delete", class: "nav-link" %></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item" id="account-dropdown">
+              <p><%= full_name %></p>
+              <p>View Profile</p>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">Account Settings</a>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %>
+          </div>
+        </li>
       </ul>
     <% else %>
       <ul class="nav navbar-nav pull-xs-right">
