@@ -3,15 +3,16 @@
     <a href="/" class="navbar-brand">RunLift Log</a>
     <% if logged_in? %>
       <ul class="nav navbar-nav pull-xs-right">
+        <li class="nav-item"><%= link_to "Users", users_path, class: "nav-link" %></li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item" id="account-dropdown">
-              <p><%= @user.first_name %> <%= @user.last_name %></p>
+            <%= link_to current_user, class: "dropdown-item", id: "account-dropdown" do %>
+              <p><%= current_user.first_name %> <%= current_user.last_name %></p>
               <p>View Profile</p>
-            </a>
+            <% end %>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">Account Settings</a>
+            <%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %>
           </div>
