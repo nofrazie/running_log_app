@@ -7,7 +7,7 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
           <div class="dropdown-menu">
             <a href="#" class="dropdown-item" id="account-dropdown">
-              <p><%= full_name %></p>
+              <p><%= @user.first_name %> <%= @user.last_name %></p>
               <p>View Profile</p>
             </a>
             <div class="dropdown-divider"></div>
