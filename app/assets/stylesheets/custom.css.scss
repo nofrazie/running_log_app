@@ -1,0 +1,17 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: rgba(20, 20, 20, 0.8);
+  height: 4px;
+  width: 26px;
+}
+
+button.navbar-toggle {
+  border: none;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: inherit;
+}
